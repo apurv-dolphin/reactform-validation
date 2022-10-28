@@ -1,6 +1,6 @@
 export default function Rightform({ deleteData, editData }) {
   const showData = JSON.parse(localStorage.getItem("saveData"));
-  // console.log(storedata);
+
   let str = "";
   let str1 = "English";
   let str2 = "Hindi";
@@ -33,14 +33,12 @@ export default function Rightform({ deleteData, editData }) {
 
   return (
     <div className="column">
-      {showData !== null && (
+      {showData.length !== 0 ? (
         <div className="right-form" id="right-form">
           <div id="tst-right" className="tst-right-cls" />
           {showData.map((newdata, index) => {
-            // console.log();
             return (
               <div className="formdata" id="formdata" key={index}>
-                {/* <span>id:{index + 1}</span> */}
                 <div className="full-detail">
                   <div className="left-detail">
                     <div className="detail">
@@ -101,42 +99,9 @@ export default function Rightform({ deleteData, editData }) {
             );
           })}
         </div>
+      ): (
+         null
       )}
     </div>
   );
 }
-// const sumlocal = JSON.parse(localStorage.getItem("saveData"));
-// const itemForUpdate = sumlocal.find((elements) => {
-//   console.log(elements.id);
-//   return elements.id === formData.id;
-// });
-// console.log(formData.emailAddress);
-// console.log(itemForUpdate.emailAddress);
-
-// const handleSubmit = (e) => {
-//   e.preventDefault();
-//   const index = storedata.find((elements) => {
-//     return elements.id === formData.id;
-//   });
-//   if (validate()) {
-//     console.log("validate", formData);
-//     // console.log(formData.id);
-//     // console.log(index.id);
-//     if (formData.id !== index.id) {
-//       console.log("__store");
-//       storeData();
-//     } else {
-//       console.log("__update");
-//       // let updatevalue = storedata.map((item) =>
-//       //   item.id === formData.id ? formData : item
-//       // );
-//       // localStorage.setItem("saveData", JSON.stringify(updatevalue));
-//       updateData(formData.id);
-//     }
-
-//     e.target.reset();
-//     clearForm();
-//   } else {
-//     console.log("not__validate", formData);
-//   }
-// };

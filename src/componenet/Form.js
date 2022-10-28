@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+// import PhoneInput from "react-phone-input-2";
+// import "react-phone-input-2/lib/style.css";
 import Rightform from "./RightForm";
 
 export default function Form() {
@@ -23,6 +25,10 @@ export default function Form() {
 
   const [error, setError] = useState({});
   const [storedata, setStoredata] = useState([]);
+
+  // const handlechange =(e) => {
+  //   setCountry(e.target.value);
+  // }
 
   // validation
   const validate = () => {
@@ -126,6 +132,7 @@ export default function Form() {
     } else {
       setStoredata([]);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const deleteData = (id) => {
@@ -170,11 +177,8 @@ export default function Form() {
     const index = storedata.find((elements) => {
       return elements.id === formData.id;
     });
-    console.log(index);
     e.preventDefault();
     if (validate()) {
-      console.log("validate", formData);
-
       if (index === undefined) {
         console.log("__store");
         storeData();
@@ -192,7 +196,7 @@ export default function Form() {
       console.log("not__validate", formData);
     }
   };
-
+  // console.log("__phone", phone);
   return (
     <div className="row">
       <div className="column">
@@ -287,6 +291,16 @@ export default function Form() {
               </p>
             )}
           </div>
+          {/* <div className="inner-form">
+            <div className="label">
+              <label>Select Country</label>
+            </div>
+            <PhoneInput
+              country={"in"}
+              value={phone}
+              onChange={(phone) => setPhone(phone)}
+            />
+          </div> */}
           <div className="inner-form">
             <div className="label">
               <label>Gender*</label>

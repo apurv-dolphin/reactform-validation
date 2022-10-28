@@ -9,7 +9,6 @@
 
 
 .row {
-  /* width: 100vw; */
   display: flex;
   flex-direction: row;
   font-family: 'Roboto';
@@ -29,7 +28,6 @@
   line-height: 14px;
   font-weight: 400;
   font-size: 12px;
-  /* height: 14px; */
   color: #FF8B8B;
 }
 
@@ -44,7 +42,6 @@
 
 .label {
   margin-bottom: 7px;
-  /* height: 14px; */
   line-height: 14px;
   font-weight: 400;
   font-size: 12px;
@@ -101,13 +98,11 @@ button.submit {
   padding-left: 34px;
   padding-right: 54px;
   padding-bottom: 21px;
-  /* height: auto; */
   background: #F5F5F5;
   border-radius: 20px;
 }
 
 .select {
-  /* height: 16px; */
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
